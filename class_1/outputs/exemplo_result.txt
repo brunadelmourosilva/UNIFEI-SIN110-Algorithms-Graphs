@@ -1,0 +1,1 @@
+nome da instância: exemplo | quantidade de linhas: 7 | quantidade de colunas: 7
