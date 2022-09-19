@@ -34,7 +34,6 @@ def main(instancia):
 
     ### FUNÇÃO 2 ###
     funcao2 = car.verificaAdjacencia(listaAdjacencia, 0, 1)
-    funcao2 = car.verificaAdjacencia(listaAdjacencia, 1, 2)
 
     resultado = [instancia, funcao2]
     ds.salvaResultado(resultado, instancia)

@@ -22,7 +22,7 @@ def tipoGrafo(listaAdjacencia):
     matrizAssimetrica = True
 
     #converte lista de adjacência para uma matriz de adjacência
-    matrizAdjacencia = converteListaAdjacenciaParaMatriz(listaAdjacencia)
+    matrizAdjacencia = converteListaAdjacenciaParaMatrizAdjacencia(listaAdjacencia)
 
     # retorna a quantidade chaves do dicionário(vértices) do grafo
     qtdVertices = np.shape(matrizAdjacencia)[0]
@@ -54,7 +54,7 @@ Saída: Boolean (True se os vértices são adjacentes; False caso contrário)
 '''
 def verificaAdjacencia(listaAdjacencia, vi, vj):
     #converte lista de adjacência para uma matriz de adjacência
-    matrizAdjacencia = converteListaAdjacenciaParaMatriz(listaAdjacencia)
+    matrizAdjacencia = converteListaAdjacenciaParaMatrizAdjacencia(listaAdjacencia)
 
     if matrizAdjacencia[vi][vj] > 0: # Se célula M[vi][vj] for maior que 0 existe uma ou mais arestas
         verticesAdjacentes = True
@@ -71,7 +71,7 @@ Saída: Float (valor da densidade com precisão de três casas decimais)
 '''
 def calcDensidade(self, listaAdjacencia):
     #converte lista de adjacência para uma matriz de adjacência
-    matrizAdjacencia = converteListaAdjacenciaParaMatriz(listaAdjacencia)
+    matrizAdjacencia = converteListaAdjacenciaParaMatrizAdjacencia(listaAdjacencia)
 
     #recebe o tipo do grafo para que a escolha do cálculo seja de acordo com o tipo retornado
     tipoGrafo = self.tipoGrafo(listaAdjacencia)
@@ -103,7 +103,7 @@ Saída: lista de adjacências (tipo Dictionary) com a aresta inserida.
 '''
 def insereAresta(self, listaAdjacencia, vi, vj):
     #converte lista de adjacência para uma matriz de adjacência
-    matrizAdjacencia = converteListaAdjacenciaParaMatriz(listaAdjacencia)
+    matrizAdjacencia = converteListaAdjacenciaParaMatrizAdjacencia(listaAdjacencia)
 
     #recebe o tipo do grafo para que a escolha da inserção da aresta seja de acordo com o tipo retornado
     tipoGrafo = self.tipoGrafo(listaAdjacencia)
@@ -129,7 +129,7 @@ Saída: lista de adjacências (tipo Dictionary) com o vértice inserido.
 '''
 def insereVertice(listaAdjacencia, vi):
     #converte lista de adjacência para uma matriz de adjacência
-    matrizAdjacencia = converteListaAdjacenciaParaMatriz(listaAdjacencia)
+    matrizAdjacencia = converteListaAdjacenciaParaMatrizAdjacencia(listaAdjacencia)
 
     #recebe o resultado do número de linhas e colunas da atual matriz
     shape = len(matrizAdjacencia)
@@ -157,7 +157,7 @@ Saída: lista de adjacências (tipo Dictionary) com a aresta removida.
 '''
 def removeAresta(self, listaAdjacencia, vi, vj):
     # converte lista de adjacência para uma matriz de adjacência
-    matrizAdjacencia = converteListaAdjacenciaParaMatriz(listaAdjacencia)
+    matrizAdjacencia = converteListaAdjacenciaParaMatrizAdjacencia(listaAdjacencia)
 
     # recebe o tipo do grafo para que a escolha da inserção da aresta seja de acordo com o tipo retornado
     tipoGrafo = self.tipoGrafo(listaAdjacencia)
@@ -183,10 +183,15 @@ Saída: matriz de adjacências (tipo numpy.ndarray) com o vértice removido.
 def removeVertice(matriz, vi):
     pass
 
-def converteListaAdjacenciaParaMatriz(listaAdjacencia):
+'''Converte uma lista de adjacência para uma matriz de adjacência.
+Entrada: lista de adjacência
+Saída: matriz de adjacências
+'''
+def converteListaAdjacenciaParaMatrizAdjacencia(listaAdjacencia):
     # retorna a quantidade chaves do dicionário(vértices) do grafo
     qtdVertices = len(listaAdjacencia)
 
+    #inicializa a matriz
     matrizAdjacencia = [[0 for j in range(qtdVertices)]
               for i in range(qtdVertices)]
 
