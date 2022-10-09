@@ -108,7 +108,7 @@ Saída: matriz de adjacências (tipo numpy.ndarray) com o vértice inserido.
 '''
 def insereVertice(matriz, vi):
     shape = matriz.shape #recebe o resultado do número de linhas e colunas da atual matriz
-    novaMatriz = numpy.zeros((shape[0] + 1, shape[1] + 1)) #cria nova matriz(números zeros) com mais uma linha e coluna
+    novaMatriz = numpy.zeros((shape[0] + 1, shape[1] + 1)).astype(np.int32) #cria nova matriz(números zeros) com mais uma linha e coluna
     qtdVertices = np.shape(matriz)[0] #recebe a quantidade de vértices
 
     #a nova matriz recebe os valores da matriz antiga de acordo com as posições da iteração
