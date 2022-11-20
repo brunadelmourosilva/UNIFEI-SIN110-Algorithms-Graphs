@@ -86,7 +86,7 @@ def caminhoEuleriano(matriz):
                 if matriz[vertice][vi] == 1:
                     degree += 1
 
-            # for vx in range(0, qtdVertices):
+            # for vx in range(0, vertexQuantity):
             if matriz[vertice][vertice] == 1:
                 degree += 1
 
